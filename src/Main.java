@@ -2,13 +2,20 @@ import java.io.Console;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Please enter your personal information step by step");
+        System.out.println("Please enter your personal information to play the game");
         System.out.print("Enter your name: ");
         String name = ConsoleReader.ReadViaBuffer();
         System.out.print("Enter your surname: ");
         String surname = ConsoleReader.ReadViaScanner();
         System.out.print("Enter your age: ");
         int age = ConsoleReader.ReadInt();
+
+        System.out.println("*************************");
+        System.out.println("Your name -> " + name);
+        System.out.println("Your surname -> " + surname);
+        System.out.println("Your age -> " + age);
+        System.out.println("*************************");
+
         System.out.println("Lets play the game");
         System.out.println("Guess the number. Tip: number is more than 0, but less than 1000");
 
