@@ -4,8 +4,8 @@ import java.util.Scanner;
 
 public class ConsoleReader {
     //Variables
-    private static Scanner sc = new Scanner(System.in);
-    private static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    final static Scanner sc = new Scanner(System.in);
+    final static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     //*******************
 
     //Methods
@@ -23,6 +23,10 @@ public class ConsoleReader {
         }catch (Exception ex){
             return 0;
         }
+    }
+
+    public static char ReadChar(){
+        return  sc.next().charAt(0);
     }
 
     public static String ReadViaBuffer() {

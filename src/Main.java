@@ -23,19 +23,26 @@ public class Main {
         GuessNumber gn = new GuessNumber();
         int number = -1;
         GuessVariants answer = GuessVariants.Less;
+        char UserAnswer = 'y';
+        while(UserAnswer=='y' || UserAnswer=='Y') {
 
-        while (answer!=GuessVariants.Correct){
+            while (answer != GuessVariants.Correct) {
 
-            System.out.print("Enter number: ");
-            number = ConsoleReader.ReadInt();
-            answer = gn.guessNumber(number);
+                System.out.print("Enter number: ");
+                number = ConsoleReader.ReadInt();
+                answer = gn.guessNumber(number);
 
-            if(answer == GuessVariants.Less)
-                System.out.println("Number is less than " + number);
-            else
-                System.out.println("Number is more than " + number);
+                if (answer == GuessVariants.Less)
+                    System.out.println("Number is less than " + number);
+                else
+                    System.out.println("Number is more than " + number);
+            }
+            System.out.println("You guessed! Correct number is " + number);
+            System.out.println(name + " " + surname + " it took you " + gn.getAttempts() + " Attempts to beat the game!");
+            System.out.println("Play again? Y\\N");
+            UserAnswer = ConsoleReader.ReadChar();
+            gn.ReloadGame();
+            answer = GuessVariants.Less;
         }
-        System.out.println("You guessed! Correct number is " + number);
-        System.out.println(name + " " + surname + " it took you " + gn.getAttempts() + " Attempts to beat the game!") ;
-    }
+        }
 }
